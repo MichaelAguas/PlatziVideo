@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet"> <!-- IMPORTANTE -->
+    <title>Header</title>
+    <style> 
+     * {
+            margin: 0;
+            padding: 0;
+        }
+    body {
+        background-color: #CA5CFB; /*  #Con background-color: ; no es necesario establecer el color en el header */
+        font-family: 'Mulish', sans-serif;
+    }
+          
+
+    .header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        width: 100%; 
+    }
+
+    .header__img {
+        margin-left: 3px;
+        width: 200px;
+    }
+    
+    .header__menu {
+        margin-right: 10px;
+    }
+
+    .header__menu--profile {
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .header__menu--profile img {
+        margin-right: 5px;
+    }
+
+    .header__menu--list {
+        display: none;        /* Añadimos display: none; para después agregar el hover y crear lista despegable */
+        list-style: none;
+        position: absolute; 
+        width: 100px;
+        text-align: right;
+        margin-left: -14px;
+    }
+
+    .header__menu:hover ul, ul:hover {   /* lista despegable, anadimos display: block; para que muestre la lista  */
+        display: block;
+    }
+
+    .header__menu--list a {
+        color: white;
+        text-decoration: none; /* Todas las listas traen una línea por debajo. Hay que quitarselas*/
+    }
+    
+    .header__menu--list a:hover {  /* Añadimos la pseudo clase HOVER, para estilizar directamente el EFECTO*/
+        text-decoration: underline;  
+    }
+
+    .header__menu--list li {
+        margin: 10px 0px 
+
+    }
+
+    .buscador {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+    }
+
+    .buscador__title {
+        color: white;
+        font-size: 25px;
+        padding-bottom: 8px;
+    }
+
+    .buscador__barra {
+        background-color: rgba(255,255,255, 0.1);
+        border: 2px solid white;
+        outline: none;            /*Quitamos el borde por defecto de un input*/
+        border-radius: 25px;      /* Ovalamos la barra del buscador */
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 40px;
+        width: 71%;
+    }
+
+    ::placeholder {             /* Utilizamos una pseudo clase para estilizar el texto */
+        color: white;
+        padding-left: 10px;
+    }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img class="header__img"src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\logo_platzi.png" alt="logo">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\user-icon.png" alt="User">
+                <p>Perfil</p>
+            </div>
+            <ul class="header__menu--list">
+                <li> <a href="/">Cuenta</a></li>
+                <li> <a href="/">Iniciar sesión</a></li>
+            </ul>
+        </div>
+    </header> 
+
+    <section class="buscador">
+        <h2 class="buscador__title">¿Qué quieres ver hoy?</h2>
+        <input class="buscador__barra" type="text" placeholder="Buscar...">  <!--Agregamos la barra del buscador (input) y el tex int placeholder...--> 
+
+    </section>
+</body>
+</html> 
