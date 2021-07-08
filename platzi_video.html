@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet"> <!-- IMPORTANTE -->
-    <title>Header</title>
+    <title>Platzi Video</title>
     <style> 
      * {
             margin: 0;
@@ -93,14 +93,53 @@
         font-family: 'Mulish', sans-serif;
         font-size: 16px;
         height: 40px;
+        padding: 10px 10px; 
         width: 71%;
     }
 
     ::placeholder {             /* Utilizamos una pseudo clase para estilizar el texto */
         color: white;
-        padding-left: 10px;
+        padding-left: -1px;
     }
 
+    .carousel {
+        width: 100%;  
+        overflow: scroll;  /*Aplicamos efecto de "deslizarse" entre los elementos*/
+        padding: 30px;
+        position: relative; /* Todos los elementos dentro del contenedor "container" se posicionarán en relación a él*/
+    } 
+
+    .carousel__container {
+        white-space: nowrap; /* Este valor manipula el espacio que dirigen a los elementos */
+        margin: 70px 0px;  /* Estas propiedades ayudan a mantener el espacio entre las imágenes */
+        padding-bottom: 10px;
+    }
+
+    .carousel-container__item {
+        background-color: white;
+        border-radius: 20px;
+        cursor: pointer;  /* Modificamos el estilo del cursor para indicar acción de dar click */
+        display: inline-block; /*Por defecto los elementos traen un display que los acomoda uno debajo del otro <display:block> para evitar esto empleamos este*/
+        height: 250px;
+        margin-right: 10px;
+        overflow: hidden; /*Recorta el estilo de la imagen y lo acopla al del item*/
+        transition: 450ms; /* Agrega estilo de transición a nuestro scroll */
+        transform-origin: center left; /* Evita que La "trasformación" inicie desde el borde de la pantalla agregando un párametro de inicio */
+        width: 200px; 
+    }
+
+    .carousel-container__item:hover ~ .carousel-container__item { /*Establece a los ITEMS que le hagamos o NO ~ hover para que vayan a la derecha*/
+        transform: translate3d(100px, 0, 0);  
+    }
+
+    .carousel__container:hover .carousel-container__item { /*Aplicamos opacidad al container cuando hagamos hover y a los items cuando NO*/
+        opacity: 0.3;
+    }
+
+    .carousel__container:hover .carousel-container__item:hover { /*Reestablecemos la opacidad del item cuando se haga HOVER y aumentamos su tamaño*/
+        transform: scale(1.5);
+        opacity: 1;
+    }
 
 
     </style>
@@ -124,7 +163,12 @@
     <section class="buscador">
         <h2 class="buscador__title">¿Qué quieres ver hoy?</h2>
         <input class="buscador__barra" type="text" placeholder="Buscar...">  <!--Agregamos la barra del buscador (input) y el tex int placeholder...--> 
-
+    </section>
+    <section class="carousel"> <!-- Creamos el contenedor que "atrapa" TODAS las imágenes< -->
+        <div class="carousel__container">   <!-- Un sub-contenedor que almacena los items< -->
+            <div class="carousel-container__item"></div>
+            <div class="carousel-container__item"></div>
+        </div>
     </section>
 </body>
-</html> 
+</html>  
