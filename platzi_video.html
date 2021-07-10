@@ -115,7 +115,7 @@
         padding-bottom: 10px;
     }
 
-    .carousel-container__item {
+    .carousel-item {
         background-color: white;
         border-radius: 20px;
         cursor: pointer;  /* Modificamos el estilo del cursor para indicar acción de dar click */
@@ -123,23 +123,43 @@
         height: 250px;
         margin-right: 10px;
         overflow: hidden; /*Recorta el estilo de la imagen y lo acopla al del item*/
+        position: relative; /*Lo establecemos pensando en la posición de los detalles del contenedor */
         transition: 450ms; /* Agrega estilo de transición a nuestro scroll */
         transform-origin: center left; /* Evita que La "trasformación" inicie desde el borde de la pantalla agregando un párametro de inicio */
         width: 200px; 
     }
 
-    .carousel-container__item:hover ~ .carousel-container__item { /*Establece a los ITEMS que le hagamos o NO ~ hover para que vayan a la derecha*/
+    .carousel-item:hover ~ .carousel-item { /*Establece a los ITEMS que le hagamos o NO ~ hover para que vayan a la derecha*/
         transform: translate3d(100px, 0, 0);  
     }
 
-    .carousel__container:hover .carousel-container__item { /*Aplicamos opacidad al container cuando hagamos hover y a los items cuando NO*/
+    .carousel__container:hover .carousel-item { /*Aplicamos opacidad al container cuando hagamos hover y a los items cuando NO*/
         opacity: 0.3;
     }
 
-    .carousel__container:hover .carousel-container__item:hover { /*Reestablecemos la opacidad del item cuando se haga HOVER y aumentamos su tamaño*/
+    .carousel__container:hover .carousel-item:hover { /*Reestablecemos la opacidad del item cuando se haga HOVER y aumentamos su tamaño*/
         transform: scale(1.5);
         opacity: 1;
     }
+
+    .carousel-item__img {
+        width: 200px; /*Colocamos los mismos valores que en el item (carousel-item)*/
+        height: 250px;
+        object-fit: cover; /*Las proporciones no afectan la originalidad del tamaño de la imagen*/
+    }
+
+    .carousel-item__details {
+        background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        transition: 450ms opacity;/*Creamos una transición para el degradado anterior*/
+        font-size: 10px;
+        opacity: 0;
+        padding: 10px;
+        position: absolute; /*Los elementos serán absolutos en base a el contenedor padre*/
+    }
+
+    .carousel-item__details:hover {
+    opacity: 1;
+}
 
 
     </style>
@@ -147,7 +167,7 @@
 
 <body>
     <header class="header">
-        <img class="header__img"src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\logo_platzi.png" alt="logo">
+        <img class="header__img" src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\logo_platzi.png" alt="logo">
         <div class="header__menu">
             <div class="header__menu--profile">
                 <img src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\user-icon.png" alt="User">
@@ -164,11 +184,23 @@
         <h2 class="buscador__title">¿Qué quieres ver hoy?</h2>
         <input class="buscador__barra" type="text" placeholder="Buscar...">  <!--Agregamos la barra del buscador (input) y el tex int placeholder...--> 
     </section>
+
     <section class="carousel"> <!-- Creamos el contenedor que "atrapa" TODAS las imágenes< -->
         <div class="carousel__container">   <!-- Un sub-contenedor que almacena los items< -->
-            <div class="carousel-container__item"></div>
-            <div class="carousel-container__item"></div>
+            <div class="carousel-item"> <!--Nuestro primer item-->
+                <img class="carousel-item__img" src="./estilos/imagenes_careosul/foto_acción.jpg" alt="Acción">
+                <div class="carousel-item__details"> <!--Creamos el contenedor que guarda los detalles del carousel-->
+                    <div>
+                        <img src="./estilos/iconos/play-icon.png" alt="Play">
+                        <img src="./estilos/iconos/plus-icon.png" alt="Plus">
+                    </div>
+                    <p class="carousel-item__details--title">Titulo descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 114</p>
+                </div>
+            </div>
+            <div class="carousel-item"></div>
         </div>
     </section>
+
 </body>
 </html>  
