@@ -1,0 +1,162 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+background-color: #CA5CFB; /*  #Con background-color: ; no es necesario establecer el color en el header */
+font-family: 'Mulish', sans-serif;
+}
+  
+
+.header {
+align-items: center;
+display: flex;
+justify-content: space-between;
+height: 80px;
+width: 100%; 
+}
+
+.header__img {
+margin-left: 25px;
+width: 200px;
+}
+
+.header__menu--profile {
+color: white;
+display: flex;
+align-items: center;
+}
+
+.header__menu--profile img {
+margin-right: 5px;
+}
+
+.header__menu--list {
+display: none;        /* Añadimos display: none; para después agregar el hover y crear lista despegable */
+list-style: none;
+position: absolute; 
+width: 100px;
+text-align: right;
+margin-left: -14px;
+}
+
+.header__menu:hover ul, ul:hover {   /* lista despegable, anadimos display: block; para que muestre la lista  */
+display: block;
+}
+
+.header__menu--list a {
+color: white;
+text-decoration: none; /* Todas las listas traen una línea por debajo. Hay que quitarselas*/
+}
+
+.header__menu--list a:hover {  /* Añadimos la pseudo clase HOVER, para estilizar directamente el EFECTO*/
+text-decoration: underline;  
+}
+
+.header__menu--list li {
+margin: 10px 0px 
+
+}
+
+.buscador {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 300px;
+}
+
+.buscador__title {
+color: white;
+font-size: 25px;
+padding-bottom: 8px;
+}
+
+.buscador__barra {
+background-color: rgba(255,255,255, 0.1);
+border: 2px solid white;
+outline: none;            /*Quitamos el borde por defecto de un input*/
+border-radius: 25px;      /* Ovalamos la barra del buscador */
+font-family: 'Mulish', sans-serif;
+font-size: 16px;
+height: 40px;
+padding: 10px 10px; 
+width: 71%;
+}
+
+::placeholder {             /* Utilizamos una pseudo clase para estilizar el texto */
+color: white;
+padding-left: -1px;
+}
+
+.carousel {
+width: 100%;  
+overflow: scroll;  /*Aplicamos efecto de "deslizarse" entre los elementos*/
+padding: 30px;
+position: relative; /* Todos los elementos dentro del contenedor "container" se posicionarán en relación a él*/
+} 
+
+.carousel__container {
+white-space: nowrap; /* Este valor manipula el espacio que dirigen a los elementos */
+margin: 70px 0px;  /* Estas propiedades ayudan a mantener el espacio entre las imágenes */
+padding-bottom: 10px;
+}
+
+.carousel-item {
+background-color: white;
+border-radius: 20px;
+cursor: pointer;  /* Modificamos el estilo del cursor para indicar acción de dar click */
+display: inline-block; /*Por defecto los elementos traen un display que los acomoda uno debajo del otro <display:block> para evitar esto empleamos este*/
+height: 250px;
+margin-right: 10px;
+overflow: hidden; /*Recorta el estilo de la imagen y lo acopla al del item*/
+position: relative; /*Lo establecemos pensando en la posición de los detalles del contenedor */
+transition: 450ms; /* Agrega estilo de transición a nuestro scroll */
+transform-origin: center left; /* Evita que La "trasformación" inicie desde el borde de la pantalla agregando un párametro de inicio */
+width: 200px; 
+}
+
+.carousel-item:hover ~ .carousel-item { /*Establece a los ITEMS que le hagamos o NO ~ hover para que vayan a la derecha*/
+transform: translate3d(100px, 0, 0);  
+}
+
+.carousel__container:hover .carousel-item { /*Aplicamos opacidad al container cuando hagamos hover y a los items cuando NO*/
+opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover { /*Reestablecemos la opacidad del item cuando se haga HOVER y aumentamos su tamaño*/
+transform: scale(1.5);
+opacity: 1;
+}
+
+.carousel-item__img {
+width: 200px; /*Colocamos los mismos valores que en el item (carousel-item)*/
+height: 250px;
+object-fit: cover; /*Las proporciones no afectan la originalidad del tamaño de la imagen*/
+}
+
+.carousel-item__details {
+background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+transition: 450ms opacity;/*Creamos una transición para el degradado anterior*/
+font-size: 10px;
+opacity: 1;
+padding: 10px;
+position: absolute; /*Los elementos serán absolutos en base a el contenedor padre*/
+top:0;
+left:0;
+right:0;
+bottom:0;
+display: flex;
+flex-flow: column;
+justify-content: flex-end;
+color: white;
+}
+
+.carousel-item__details:hover {
+opacity: 1;
+}
+
+.carousel-item__details--title, .carousel-item__details--subtitle  {
+color: #ffffff;
+}
