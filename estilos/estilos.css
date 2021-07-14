@@ -1,14 +1,3 @@
-
-* {
-    margin: 0;
-    padding: 0;
-}
-body {
-background-color: #CA5CFB; /*  #Con background-color: ; no es necesario establecer el color en el header */
-font-family: 'Mulish', sans-serif;
-}
-  
-
 .header {
 align-items: center;
 display: flex;
@@ -18,7 +7,7 @@ width: 100%;
 }
 
 .header__img {
-margin-left: 25px;
+margin-left: 6px;
 width: 200px;
 }
 
@@ -96,6 +85,10 @@ overflow: scroll;  /*Aplicamos efecto de "deslizarse" entre los elementos*/
 padding: 30px;
 position: relative; /* Todos los elementos dentro del contenedor "container" se posicionarán en relación a él*/
 } 
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 .carousel__container {
 white-space: nowrap; /* Este valor manipula el espacio que dirigen a los elementos */
