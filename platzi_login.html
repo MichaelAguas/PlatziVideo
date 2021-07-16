@@ -8,24 +8,24 @@
     <title>Iniciar sesión</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header"> <!--Reutilizamos el header-->
         <img class="header__img" src="C:\Users\aguas\PlatziVideo\estilos\imagenes_header\logo_platzi.png" alt="logo">   
     </header> 
-    <section class="login">
-        <section class="login__container">
+    <section class="login"> <!--Creo el BLOQUE donde escribimos lo que compone el login-->
+        <section class="login__container"> <!--Aquí almaceno los elementos del contenedor-login-->
             <h2>Inciar sesión</h2>
-            <form class="login__container--form">
+            <form class="login__container--form"> <!--Elaboro el formulario con inputs-->
                 <input class="input" type="text" placeholder="Correo">
                 <input class="input" type="password" placeholder="Contraseña">
                 <button class="boton">Inciar sesión</button>
-                <div class="login__container--recuerdame">
-                   <label>
-                    <input type="checkbox" id="box1" value="checkbox">Recuérdame  
+                <div class="login__container--recuerdame"> <!--Almacena el checkbox de recordatorio-->
+                   <label> <!--Usamos label por accesibilidad a personas discapactidas-->
+                    <input type="checkbox" id="box1" value="checkbox">Recuérdame <!--Input tipo checkbox-->
                    </label>
                    <a href="/">Olvidé mi contraseña</a>
                 </div>
             </form>
-            <section class="login__container--social-media">
+            <section class="login__container--social-media"> <!--Sección con opciones de ingreso-->
                 <div><img src="./estilos/iconos/google-icon.jpg" width="30" alt="Google">Iniciar sesión con Google</div>
                 <div><img src="./estilos/iconos/twitter-icon.png" width="30" alt="Twitter">Iniciar sesión con Twitter</div>
             </section>
@@ -37,7 +37,5 @@
         <a href="/">Declaración de privacidad</a>
         <a href="/">Centro de ayuda</a>
     </footer>
-
-    
 </body>
 </html>
