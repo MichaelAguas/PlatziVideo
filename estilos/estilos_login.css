@@ -86,6 +86,8 @@
 }
 
 .login__container--registro a { /*Edito el enlace del registro*/
+    display: flex;
+    justify-content: center;
     color: white;
     font-size: 16px; 
     text-decoration: none;
