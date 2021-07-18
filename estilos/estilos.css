@@ -90,12 +90,21 @@ color: white;
 padding-left: -1px;
 }
 
+.title__container {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    padding-left: 20px;
+    width: 100%;
+}
+
 .carousel {
 width: 100%;  
 overflow: scroll;  /*Aplicamos efecto de "deslizarse" entre los elementos*/
 padding: 30px;
 position: relative; /* Todos los elementos dentro del contenedor "container" se posicionarán en relación a él*/
 } 
+
 
 ::-webkit-scrollbar {
     display: none;
