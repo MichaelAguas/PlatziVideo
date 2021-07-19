@@ -1,0 +1,142 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3ff45b;
+  background-image: linear-gradient(0deg, #3ff45b 0%, #16A085 100%);
+  font-family: "Muli", sans-serif;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+}
+
+.header__img {
+  margin-left: 6px;
+  width: 200px;
+}
+
+.login {
+  display: flex;
+  /*Aplico el tipo de display*/
+  align-items: center;
+  /*Alineación de contenido e items al medio*/
+  justify-content: center;
+  padding: 30px 0px;
+  min-height: calc(100vh - 158px);
+  /*Fuerza a que el elemento tenga la altura que establezcamos*/
+}
+
+.login__container {
+  background-color: rgba(255, 255, 255, 0.1);
+  /*Aplico opacidad al fondo del contenedor*/
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  /*Espacio equitativo a los ELEMENTOS*/
+  flex-direction: column;
+  /*Alineo los alimentos*/
+  min-height: 450px;
+  /*Se aumenta el tamaño del borde*/
+  padding: 45px 18px 30px;
+  width: 330px;
+}
+
+.login__container--form {
+  display: flex;
+  flex-direction: column;
+  /*Posicionamos los ELEMENTOS en forma de columna (uno encima del otro)*/
+}
+
+.login__container--form label {
+  font-size: 14px;
+}
+
+.input {
+  background-color: transparent;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 2px solid white;
+  font-size: 16px;
+  font-family: "Muli", sans-serif;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  outline: none;
+}
+
+::placeholder {
+  /*Letras del input en blanco*/
+  color: white;
+}
+
+.boton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-family: "Muli", sans-serif;
+  font-size: 16px;
+  height: 50px;
+  letter-spacing: 0.5px;
+  /*Espacio entre letras*/
+  margin: 10px 0px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  /*Altura*/
+  width: 100%;
+  /*Ancho, se establece "el deslizar"*/
+}
+
+.footer a {
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.login__container--form a {
+  /*Edito el enlace de iniciar sesión*/
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.login__container--form a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .login__container {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
